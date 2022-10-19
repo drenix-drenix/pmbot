@@ -181,9 +181,9 @@ async def proce(message: types.Message, state: FSMContext):
 					connection.commit()
 					await message.answer('Пользователь успешно заблокирован.', reply_markup=kb.adm)
 					await state.finish()
-					await bot.send_message(message.text, 'Ты получил ответ от администрации.')
+					await bot.send_message(message.text, 'Ты заблокирован администратрацией бота!')
 				else:
-					await message.answer('Данный пользователь уже получил ответ', reply_markup=kb.adm)
+					await message.answer('Данный пользователь уже заблокирован', reply_markup=kb.adm)
 					await state.finish()
 		else:
 			await message.answer('Эй, Ты вводишь буквы...\nВведи ID')
